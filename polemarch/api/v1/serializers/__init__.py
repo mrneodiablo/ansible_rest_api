@@ -1,0 +1,14 @@
+from groupserializer import GroupSerializer, OneGroupSerializer
+from historyserializer import OneHistorySerializer, HistorySerializer, HistoryLinesSerializer
+from hookserializer import HookSerializer
+from hostserializer import OneHostSerializer, HostSerializer
+from inventoryserializer import OneInventorySerializer, InventorySerializer
+from periodictaskserializer import OnePeriodictaskSerializer, PeriodictaskSerializer
+from projectserializer import OneProjectSerializer, ProjectSerializer
+from scriptserializer import OneScriptSerializer, ScriptSerializer
+from taskserialiser import OneTaskSerializer, TaskSerializer
+from templateserializer import OneTemplateSerializer, TemplateSerializer
+from teamserializer import TeamSerializer, OneTeamSerializer
+from userserializer import OneUserSerializer, UserSerializer
+from variableserializer import VariableSerializer
+from permissionserializer import PermissionsSerializer

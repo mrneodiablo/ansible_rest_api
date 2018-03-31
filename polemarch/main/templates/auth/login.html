@@ -1,0 +1,53 @@
+{% extends "../base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+
+
+{% block body %}
+    <body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <h2><b>SUPPER SIÊU NHÂN TOOL</b></h2>
+            <h4>Manage servers with chạy bộ</h4>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Sign in to start your session</p>
+
+            <form  method="post" action="{% url 'login' %}" class="form-signin">
+                {% csrf_token %}
+                <div class="form-group has-feedback">
+                    <input type="text" name='{{ form.username.name }}' id="{{ form.username.name }}" class="form-control" placeholder="Login" required autofocus>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <input type="password" name='{{ form.password.name }}' id="{{ form.password.name }}" class="form-control" placeholder="Password">
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-4" align="center">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <input type="hidden" name="next" value="{{ next }}"/>
+                {% if form.errors %}
+                    {% if form.non_field_errors %}
+                        <ul class='form-errors'>
+                            {% for error in form.non_field_errors %}
+                                <li style='color: red'>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endif %}
+            </form>
+
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+    <script src="{% static 'plugins/jQuery/jquery-2.2.3.min.js' %}" type="text/javascript"></script>
+    </body>
+{% endblock %} 
